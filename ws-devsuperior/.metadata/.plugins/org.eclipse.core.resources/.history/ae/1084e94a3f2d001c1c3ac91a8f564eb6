@@ -1,0 +1,5 @@
+package com.clinica.model.Entity;
+
+public class Filial {
+
+}

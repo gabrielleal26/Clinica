@@ -1,0 +1,8 @@
+server.port = 8586
+spring.datasource.url=jdbc:mysql://localhost/clinica?createDatabaseIfNotExist=true&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=Gabriel2607
+spring.jpa.generate-ddl=true
+#spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true

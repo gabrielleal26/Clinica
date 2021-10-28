@@ -1,0 +1,21 @@
+package com.clinica.model.Entity;
+
+public class Filial {
+	
+	private Long id;
+	private String cnpj;
+	private String razaoSocial;
+	private String nomeFantasia;
+	private String nomeSigla;
+	private String nomeFilial;
+	private String nomeResponsavel;
+	private String telefone;
+	private String celular;
+	private String email;
+	private String tipoClinica;
+	private String tipoPessoa;
+	private String IE;
+	private String IM;
+	private Empresa empresa;
+
+}

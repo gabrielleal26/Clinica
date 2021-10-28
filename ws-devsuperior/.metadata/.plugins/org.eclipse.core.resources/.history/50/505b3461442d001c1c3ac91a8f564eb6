@@ -1,0 +1,138 @@
+package com.clinica.model.Entity;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name="empresa")
+public class Empresa {
+	
+	private Long id;
+	private String cnpj;
+	private String razaoSocial;
+	private String nomeFantasia;
+	private String nomeResponsavel;
+	private String telefone;
+	private String celular;
+	private String email;
+	private String tipoClinica;
+	private String tipoPessoa;
+	private String IE;
+	private String IM;
+	private LocalDateTime dataCadastro;
+	private LocalDateTime dataAtualizacao;
+	private List<Filial> filial;
+	
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getCnpj() {
+		return cnpj;
+	}
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+	public String getRazaoSocial() {
+		return razaoSocial;
+	}
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
+	}
+	public String getNomeFantasia() {
+		return nomeFantasia;
+	}
+	public void setNomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
+	}
+	public String getNomeResponsavel() {
+		return nomeResponsavel;
+	}
+	public void setNomeResponsavel(String nomeResponsavel) {
+		this.nomeResponsavel = nomeResponsavel;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public String getCelular() {
+		return celular;
+	}
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getTipoClinica() {
+		return tipoClinica;
+	}
+	public void setTipoClinica(String tipoClinica) {
+		this.tipoClinica = tipoClinica;
+	}
+	public String getTipoPessoa() {
+		return tipoPessoa;
+	}
+	public void setTipoPessoa(String tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
+	}
+	public String getIE() {
+		return IE;
+	}
+	public void setIE(String iE) {
+		IE = iE;
+	}
+	public String getIM() {
+		return IM;
+	}
+	public void setIM(String iM) {
+		IM = iM;
+	}
+	public LocalDateTime getDataCadastro() {
+		return dataCadastro;
+	}
+	public void setDataCadastro(LocalDateTime dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+	public LocalDateTime getDataAtualizacao() {
+		return dataAtualizacao;
+	}
+	public void setDataAtualizacao(LocalDateTime dataAtualizacao) {
+		this.dataAtualizacao = dataAtualizacao;
+	}
+	
+	@OneToMany(mappedBy="empresas")
+	@JsonIgnore
+	public List<Filial> getFilial() {
+		return filial;
+	}
+	public void setFilial(List<Filial> filial) {
+		this.filial = filial;
+	}
+	
+	
+
+	
+}
